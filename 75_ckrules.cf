@@ -101,7 +101,7 @@ body CK_INTERNET_CONNECT       /\bYou need to be connected to the Internet to vi
 describe CK_INTERNET_CONNECT   Spam-Mail which adivces to connect to internet (lots of spams in September 2009)
 score CK_INTERNET_CONNECT      7.0
 
-header CK_DOMAIN_LISTING	Subject =~ /\bThis is your Final Notice of Domain Listing/i
+header CK_DOMAIN_LISTING	Subject =~ /\b(?:domain[s]?|dns).*(?:notice|reminder|expire|expiration).*(?:domain|seo|record).*(?:listing|list)/i
 describe CK_DOMAIN_LISTING	Company which wants to charge to list your domain
 score CK_DOMAIN_LISTING		7.0
 
@@ -113,11 +113,11 @@ header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
 describe CK_IPHONE_PICTURE	Mail sent by iPhone including picture only
 score CK_IPHONE_PICTURE		-15.0
 
-header CK_AWARDING_GIFTS	Subject =~ /\b(?:receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?).*(?:arrive[d]?|sent)/i
+header CK_AWARDING_GIFTS	Subject =~ /\b(?:redeem|receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search[i]?[n]?[g]?).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?).*(?:arrive[d]?|sent)/i
 describe CK_AWARDING_GIFTS	Typical spams rewards/coupons etc
 score CK_AWARDING_GIFTS		5.0
 
-header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?).*(?:dating|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret)/i
+header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|search[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?).*(?:dating|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret)/i
 describe CK_DATING		Fake dating spams
 score CK_DATING			5.0
 
