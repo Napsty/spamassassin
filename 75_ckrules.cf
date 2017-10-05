@@ -1,7 +1,10 @@
-#####################################################################
+###################################################################################
 # This is a rules configuration file for SpamAssassin
 # You may want to update to the newest version, please check
 # the website www.claudiokuenzler.com for updates.
+#
+# This file is now publicly available in the following Git repo:
+# https://github.com/Napsty/spamassassin
 #
 # Save this file where you have the other SpamAssassin cf files
 # -> usually under /usr/share/spamassassin 
@@ -15,7 +18,8 @@
 # 2009-09-22	First public version (after one month in production)
 # ...		Several rules added
 # 2010-12-10	Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
-#####################################################################
+# 2017-10-05	Addd CK_AWARDING_GIFTS and CK_DATING, other minor modifications
+###################################################################################
 
 body CK_VIAGRA_MENTIONED       /\b.*v[i!]agr[4a].*\b/i
 describe CK_VIAGRA_MENTIONED   Viagra text within e-mail
@@ -25,7 +29,7 @@ body CK_LOTTERY_WINNING        /\b(?:winning|lottery|lotto|euromillion[s]?|tombo
 describe CK_LOTTERY_WINNING    Typical winning notification e-mails
 score CK_LOTTERY_WINNING       4.0
 
-body CK_CASINO_LOTTO           /\b(?:j[a4]ckpot[s]?|cas[1i]no|lott[0o])/i
+body CK_CASINO_LOTTO           /\b(?:j[a4]ckpot[s]?|cas[1i]no|lott[0o]|slots)/i
 describe CK_CASINO_LOTTO       Typical winning notification e-mails
 score CK_CASINO_LOTTO          4.0
 
@@ -61,7 +65,7 @@ header CK_SUBJECT_DICK         Subject =~ /\b.*dick.*\b/i
 describe CK_SUBJECT_DICK       Subject contents dick
 score CK_SUBJECT_DICK          2.5
 
-header CK_MEDICAL_SUBJECT      Subject =~ /\b(?:pill[s]?|plils|medicin[e]?[s]?|medical|mediicnes|medication[s]?|meidcaitions|cilais|meds|ph[ar][ar]macy|pharmacie[s]?|pharmaceutic[s]?|prescription[s]?|drug[s]?)\b/i
+header CK_MEDICAL_SUBJECT      Subject =~ /\b(?:pill[s]?|plils|medicin[e]?[s]?|medical|mediicnes|medication[s]?|meidcaitions|cilais|meds|ph[ar][ar]macy|pharmacie[s]?|pharmaceutic[s]?|prescription[s]?|drug[s]?|implant[s]?|dental)\b/i
 describe CK_MEDICAL_SUBJECT    Subject contents one of the words
 score CK_MEDICAL_SUBJECT       5.5
 
@@ -108,3 +112,12 @@ score CK_SPAM_ADDRESS          5.0
 header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
 describe CK_IPHONE_PICTURE	Mail sent by iPhone including picture only
 score CK_IPHONE_PICTURE		-15.0
+
+header CK_AWARDING_GIFTS	Subject =~ /\b(?:receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?).*(?:arrive[d]?|sent)/i
+describe CK_AWARDING_GIFTS	Typical spams rewards/coupons etc
+score CK_AWARDING_GIFTS		5.0
+
+header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?).*(?:dating|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret)/i
+describe CK_DATING		Fake dating spams
+score CK_DATING			5.0
+
