@@ -113,9 +113,13 @@ header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
 describe CK_IPHONE_PICTURE	Mail sent by iPhone including picture only
 score CK_IPHONE_PICTURE		-15.0
 
-header CK_AWARDING_GIFTS	Subject =~ /\b(?:redeem|receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search[i]?[n]?[g]?).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?)\b/i
-describe CK_AWARDING_GIFTS	Typical spams rewards/coupons etc
-score CK_AWARDING_GIFTS		5.0
+header CK_AWARDING_GIFTS_SJ	Subject =~ /\b(?:redeem|receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search[i]?[n]?[g]?).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?)\b/i
+describe CK_AWARDING_GIFTS_SJ	Typical spams rewards/coupons etc
+score CK_AWARDING_GIFTS_SJ	5.0
+
+body CK_AWARDING_GIFTS_BODY	/\b(?:redeem|receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search[i]?[n]?[g]?).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?)\b/i
+describe CK_AWARDING_GIFTS_BODY	Typical spams rewards/coupons etc
+score CK_AWARDING_GIFTS_BODY	5.0
 
 header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|search[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?).*(?:dating|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret)\b/i
 describe CK_DATING		Fake dating spams
