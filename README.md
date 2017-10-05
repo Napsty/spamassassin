@@ -1,0 +1,2 @@
+# spamassassin
+Own Spamassassin Rules
