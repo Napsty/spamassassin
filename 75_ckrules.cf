@@ -14,7 +14,7 @@
 # Author:	Claudio Kuenzler
 # Licence:	GPL (feel free to add/delete/redistribute)
 #
-# Version History:
+# Major Version History (minor modifications see Github repository)
 # 2009-09-22	First public version (after one month in production)
 # ...		Several rules added
 # 2010-12-10	Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
