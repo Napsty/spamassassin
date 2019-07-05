@@ -19,7 +19,7 @@
 # ...		Several rules added
 # 2010-12-10 Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
 # 2017-10-05 Add CK_AWARDING_GIFTS and CK_DATING, other minor modifications
-# 2019-07-05 Add 
+# 2019-07-05 Add 4 Digit Domains
 ###################################################################################
 
 body CK_VIAGRA_MENTIONED       /\b.*v[i!]agr[4a].*\b/i
