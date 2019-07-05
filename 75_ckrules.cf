@@ -17,8 +17,9 @@
 # Major Version History (minor modifications see Github repository)
 # 2009-09-22	First public version (after one month in production)
 # ...		Several rules added
-# 2010-12-10	Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
-# 2017-10-05	Addd CK_AWARDING_GIFTS and CK_DATING, other minor modifications
+# 2010-12-10 Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
+# 2017-10-05 Add CK_AWARDING_GIFTS and CK_DATING, other minor modifications
+# 2019-07-05 Add 
 ###################################################################################
 
 body CK_VIAGRA_MENTIONED       /\b.*v[i!]agr[4a].*\b/i
@@ -105,9 +106,13 @@ header CK_DOMAIN_LISTING	Subject =~ /\b(?:domain[s]?|dns).*(?:notice|reminder|ex
 describe CK_DOMAIN_LISTING	Company which wants to charge to list your domain
 score CK_DOMAIN_LISTING		7.0
 
-header CK_SPAM_ADDRESS         Reply-To =~ /\b(?:terra.com)\b/i
-describe CK_SPAM_ADDRESS       Possible spam domains
-score CK_SPAM_ADDRESS          5.0
+header CK_TERRA_SPAM_ADDRESS    Reply-To =~ /\b(?:terra.com)\b/i
+describe CK_TERRA_SPAM_ADDRESS  Possible spam domains
+score CK_TERRA_SPAM_ADDRESS     5.0
+
+header CK_4DIGIT_SPAM_ADDRESS   From =~ \b.*\@\d\d\d\d..*\b/i
+describe CK_4DIGIT_SPAM_ADDRESS Only 4 digit domain name, likely spam domains
+score CK_4DIGIT_SPAM_ADDRESS    5.0
 
 header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
 describe CK_IPHONE_PICTURE	Mail sent by iPhone including picture only
@@ -124,4 +129,3 @@ score CK_AWARDING_GIFTS_BODY	5.0
 header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|search[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?|online|internet).*(?:dating|date[s]?|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret|affair[s]?)\b/i
 describe CK_DATING		Fake dating spams
 score CK_DATING			5.0
-
