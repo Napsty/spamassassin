@@ -115,7 +115,7 @@ describe CK_4DIGIT_SPAM_ADDRESS Only 4 digit domain name, almost certainly spam 
 score CK_4DIGIT_SPAM_ADDRESS    7.0
 
 header CK_ONLY_DIGIT_DOMAIN     From =~ /\b\S*\@\d*\.[a-zA-Z]*/i
-describe CK_ONLY_DIGIT_DOMAIN   Only 4 digit domain name, likely spam domains
+describe CK_ONLY_DIGIT_DOMAIN   Only digits domain name, likely spam domains
 score CK_ONLY_DIGIT_DOMAIN      4.0
 
 header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
