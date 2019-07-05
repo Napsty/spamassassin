@@ -19,7 +19,7 @@
 # ...		Several rules added
 # 2010-12-10 Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
 # 2017-10-05 Add CK_AWARDING_GIFTS and CK_DATING, other minor modifications
-# 2019-07-05 Add 4 Digit Domains
+# 2019-07-05 Add Digit Domains
 ###################################################################################
 
 body CK_VIAGRA_MENTIONED       /\b.*v[i!]agr[4a].*\b/i
@@ -110,9 +110,13 @@ header CK_TERRA_SPAM_ADDRESS    Reply-To =~ /\b(?:terra.com)\b/i
 describe CK_TERRA_SPAM_ADDRESS  Possible spam domains
 score CK_TERRA_SPAM_ADDRESS     5.0
 
-header CK_4DIGIT_SPAM_ADDRESS   From =~ \b.*\@\d\d\d\d..*\b/i
-describe CK_4DIGIT_SPAM_ADDRESS Only 4 digit domain name, likely spam domains
-score CK_4DIGIT_SPAM_ADDRESS    5.0
+header CK_4DIGIT_SPAM_ADDRESS   From =~ \b.*\@\d\d\d\d\..*\b/i
+describe CK_4DIGIT_SPAM_ADDRESS Only 4 digit domain name, almost certainly spam domains
+score CK_4DIGIT_SPAM_ADDRESS    7.0
+
+header CK_ONLY_DIGIT_DOMAIN     From =~ \b.*\@\d*\..*\b/i
+describe CK_ONLY_DIGIT_DOMAIN   Only 4 digit domain name, likely spam domains
+score CK_ONLY_DIGIT_DOMAIN      4.0
 
 header CK_IPHONE_PICTURE	ALL =~ /boundary\=Apple\-Mail.*/
 describe CK_IPHONE_PICTURE	Mail sent by iPhone including picture only
