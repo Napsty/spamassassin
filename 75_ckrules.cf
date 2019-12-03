@@ -128,7 +128,7 @@ score CK_AWARDING_GIFTS_SJ	5.0
 
 body CK_AWARDING_GIFTS_BODY	/\b(?:redeem|receive[d]?|get|looking|consider[e]?[d]?|claim|buy|find|search[i]?[n]?[g]?).*(?:award[s]?|coupon[s]?|card[s]?|reward[s]?|offer[s]?|choice[s]?|benefit[s]?|deals[s]?)\b/i
 describe CK_AWARDING_GIFTS_BODY	Typical spams rewards/coupons etc
-score CK_AWARDING_GIFTS_BODY	5.0
+score CK_AWARDING_GIFTS_BODY	3.0
 
 header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|search[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?|online|internet).*(?:dating|date[s]?|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret|affair[s]?)\b/i
 describe CK_DATING		Fake dating spams
