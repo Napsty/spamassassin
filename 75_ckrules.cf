@@ -68,11 +68,11 @@ score CK_SUBJECT_DICK          2.5
 
 header CK_MEDICAL_SUBJECT      Subject =~ /\b(?:pill[s]?|plils|medicin[e]?[s]?|medical|mediicnes|medication[s]?|meidcaitions|cilais|meds|ph[ar][ar]macy|pharmacie[s]?|pharmaceutic[s]?|prescription[s]?|drug[s]?|implant[s]?|dental)\b/i
 describe CK_MEDICAL_SUBJECT    Subject contents one of the words
-score CK_MEDICAL_SUBJECT       5.5
+score CK_MEDICAL_SUBJECT       2.5
 
 body CK_MEDICAL_BODY           /\b(?:p[!i]lls|plils|medicin[e]?[s]?|mediicnes|medical|medication|medications|pharmacy|pharmacies|pharmaceutic[s]?|prescription[s]?|drug[s]?|levrita|v[i!][a4]gr[a4]|c[i!][4a]l[i!]s)\b/i
 describe CK_MEDICAL_BODY       Mail contents one of the words
-score CK_MEDICAL_BODY          4.5
+score CK_MEDICAL_BODY          1.5
 
 header CK_RAMADAN_SPAMS        Subject =~ /\bramadan (?:greeting[s]?|wish[e]?[s]?)/i
 describe CK_RAMADAN_SPAMS      Subject contents Ramadan followed by Greetings (lots of Spams in August 2009)
@@ -80,19 +80,19 @@ score CK_RAMADAN_SPAMS         3.5
 
 body CK_STRONG_MENTIONED       /\bstrong (?:healt[h]?|cock|dick|penis)/i
 describe CK_STRONG_MENTIONED   Normally spam (be strong)
-score CK_STRONG_MENTIONED      3.75
+score CK_STRONG_MENTIONED      2.75
 
 body CK_BEST_MENTIONED         /\bbest (?:health|choice|offer[s]?|penis|strength|casino[s]?|online)/i
 describe CK_BEST_MENTIONED     Normally spam (best ..)
-score CK_BEST_MENTIONED        3.5
+score CK_BEST_MENTIONED        2.5
 
 body CK_ONLINE_MENTIONED       /\bonline (?:casino|pharmacy|drug[s]?|offer[s]?|doctor[s]?)/i
 describe CK_ONLINE_MENTIONED   Normally spam (online pharmacy ..)
-score CK_ONLINE_MENTIONED      3.5
+score CK_ONLINE_MENTIONED      2.5
 
 body CK_FREE_MENTIONED         /\bfree (?:casino|pharmacy|drug[s]?|sex|offer[s]?|lotto|pri[cz]e[s])/i
 describe CK_FREE_MENTIONED     Normally spam (free lotto ..)
-score CK_FREE_MENTIONED        3.5
+score CK_FREE_MENTIONED        2.5
 
 body CK_PHISHING_BEGGING       /\b(?:widow[e]?[r]?|death|died|beneficiary|hunger|transaction[s]?|transfer[s]?)\b/i
 describe CK_PHISHING_BEGGING   Phishing mails to transfer money and begging for money
