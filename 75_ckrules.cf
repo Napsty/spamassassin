@@ -20,6 +20,7 @@
 # 2010-12-10 Added CK_IPHONE_PICTURE (such mails are spam-tagged by Razor)
 # 2017-10-05 Add CK_AWARDING_GIFTS and CK_DATING, other minor modifications
 # 2019-07-05 Add Digit Domains
+# 2024-09-26 Add CK_GUMMIES
 ###################################################################################
 
 body CK_VIAGRA_MENTIONED       /\b.*v[i!]agr[4a].*\b/i
@@ -133,3 +134,7 @@ score CK_AWARDING_GIFTS_BODY	3.0
 header CK_DATING		Subject =~ /\b(?:look[i]?[n]?[g]?|search[i]?[n]?[g]?|date|attractive|naughty|sex[y]?|beauty|beautiful[l]?[l]?[y]?|online|internet).*(?:dating|date[s]?|love|wom[ae]n|hookup[s]?|hooker[s]?|slut[s]?|secret|affair[s]?)\b/i
 describe CK_DATING		Fake dating spams
 score CK_DATING			5.0
+
+header CK_GUMMIES		Subject =~ /\b(?:manhood|animal|attractive|naughty|sex[y]?|online|keto|natur[e]?|enhancement).*(?:gummi[e]?[s]?|fruchtgummis)\b/i
+describe CK_GUMMIES		Spams about some weird sexual medication
+score CK_GUMMIES		5.0
